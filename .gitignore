@@ -1,0 +1,6 @@
+# Ignorar el directorio de Vagrant
+.vagrant/
+
+# Ignorar archivos de backup creados por editores
+*~
+*.bak
