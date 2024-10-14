@@ -3,4 +3,4 @@
 
 # Ignorar archivos de backup creados por editores
 *~
-*.bak
+*.bak 
