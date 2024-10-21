@@ -1,0 +1,16 @@
+options {
+  directory "/var/cache/bind";
+
+  forwarders {
+    208.67.222.222;  # OpenDNS
+  };
+
+  dnssec-validation yes;
+
+  listen-on { any; };
+  listen-on-v6 { none; };
+
+  allow-query { localhost; 192.168.57.0/24; };
+  recursion yes;
+};
+
