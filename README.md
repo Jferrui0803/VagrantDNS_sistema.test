@@ -125,6 +125,7 @@ Para asegurarnos de que la configuración DNS está funcionando correctamente, r
 5. **Servidores MX**:
 
     - Se comprueba los servidores MX
+
     ![Servidores MX](./images/8(tierra).png)
     ![Servidores MX](./images/8(venus).png)
 
