@@ -7,10 +7,9 @@ Este proyecto consiste en la configuración de un sistema DNS maestro-esclavo ut
 - [Requisitos previos](#requisitos-previos)
 - [Infraestructura del Proyecto](#infraestructura-del-proyecto)
 - [Pasos Realizados](#pasos-realizados)
-- [Configuración del Servidor Maestro](#configuración-del-servidor-maestro)
-- [Configuración del Servidor Esclavo](#configuración-del-servidor-esclavo)
-- [Verificación y Solución de Problemas](#verificación-y-solución-de-problemas)
+- [Configuración de Servidores](#configuración-de-servidores)
 - [Comprobación Final](#comprobación-final)
+- [Comprobación Test.bat](#comprobación-test.bat)
 - [Licencia](#licencia)
 
 ---
@@ -53,12 +52,14 @@ Este proyecto está compuesto por 2 máquinas virtuales en una red privada (192.
 
 ---
 
-## Configuración del Servidor Maestro
+## Configuración de Servidores
 
 ## Configuración de zonas
 Aquí se muestra la configuración del servidor maestro (`tierra.sistema.test`), donde se ajustaron las zonas directa e inversa.
 
 ![Configuración zonas del Servidor Maestro](./images/named-conf-loc.png)
+
+Para el servidor esclavo haríamos lo mismo, solo que cambiando el "master" por "slave"
 
 ---
 
@@ -133,11 +134,31 @@ Para asegurarnos de que la configuración DNS está funcionando correctamente, r
 
     - Se comprueba si se ha realizado la transferencia de la zona entre el servidor DNS maestro y el esclavo-
 
-    Me ha dado error a la hora de hacer la conexion , he intentado de todo
-    pero no hay manera de que salgan los datos.
+    ![Registro AXFR](./images/axks.png)
 
-    ![Servidores MX](./images/9(venus).png)
+---
 
+## Comprobación Test.bat
+
+   Lo primero que vamos a hacer es cambiar el servidor, para eso usaremos el comando **server 192.168.57.103**
+
+1. **Registros A**:
+   - Consultamos registros A de tierra y venus
+
+   ![Registro A(tierra)](./images/1test.png)
+   ![Registro A(venus)](./images/2test.png)
+
+2. **Consulta Inversa**:
+   - Hacemos la consulta inversa
+
+   ![ConsultaInv(tierra)](./images/3test.png)
+   
+
+3. **Comprobacion Alias**:
+   - Hacemos la comprobación de alias
+
+   ![CompAli(tierra)](./images/4test.png)
+   ![CompAli(venus)](./images/5test.png)
 
 ---
 
