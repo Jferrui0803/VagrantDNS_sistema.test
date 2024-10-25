@@ -28,8 +28,8 @@ Este proyecto está compuesto por 2 máquinas virtuales en una red privada (192.
 
 | Máquina                | FQDN                  | IP              | Rol                         |
 |------------------------|-----------------------|-----------------|-----------------------------|
-| Tierra (maestro)        | tierra.sistema.test    | 192.168.57.103  | Servidor DNS Maestro (BIND9) |
-| Venus (esclavo)         | venus.sistema.test     | 192.168.57.102  | Servidor DNS Esclavo (BIND9) |
+| Tierra (master)        | tierra.sistema.test    | 192.168.57.103  | Servidor DNS Maestro (BIND9) |
+| Venus (slave)         | venus.sistema.test     | 192.168.57.102  | Servidor DNS Esclavo (BIND9) |
 
 ---
 
@@ -78,6 +78,8 @@ El archivo db.sistema.test define cómo el servidor DNS maestro resuelve los nom
 
 ![Configuración zona directa](./images/db-sistema-test.png)
 
+Cambiamos el **Negative Cache TTL** a 7200
+
 
 ---
 
@@ -88,7 +90,7 @@ El archivo db.sistema.test define cómo el servidor DNS maestro resuelve los nom
 
 ![Configuración zona inversa](./images/db127.png)
 
-
+Cambiamos el **Negative Cache TTL** a 7200
 ---
 
 ## Comprobación Final
@@ -132,7 +134,7 @@ Para asegurarnos de que la configuración DNS está funcionando correctamente, r
 
 6. **Registro AXFR**:
 
-    - Se comprueba si se ha realizado la transferencia de la zona entre el servidor DNS maestro y el esclavo-
+    - Se comprueba si se ha realizado la transferencia de la zona entre el servidor DNS maestro y el esclavo
 
     ![Registro AXFR](./images/axks.png)
 
