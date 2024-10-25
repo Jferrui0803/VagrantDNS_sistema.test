@@ -59,7 +59,7 @@ Aquí se muestra la configuración del servidor maestro (`tierra.sistema.test`),
 
 ![Configuración zonas del Servidor Maestro](./images/named-conf-loc.png)
 
-Para el servidor esclavo haríamos lo mismo, solo que cambiando el "master" por "slave"
+Para el servidor esclavo haríamos lo mismo, solo que cambiando el **master** por **slave**
 
 ---
 
@@ -91,6 +91,8 @@ El archivo db.sistema.test define cómo el servidor DNS maestro resuelve los nom
 ![Configuración zona inversa](./images/db127.png)
 
 Cambiamos el **Negative Cache TTL** a 7200
+
+
 ---
 
 ## Comprobación Final
